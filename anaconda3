@@ -1,0 +1,28 @@
+# Go to home directory
+cd ~
+
+# You can change what anaconda version you want at 
+# https://repo.continuum.io/archive/
+wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
+bash Anaconda3-4.3.0-Linux-x86_64.sh -b -p ~/anaconda
+rm Anaconda3-4.3.0-Linux-x86_64.sh
+
+# Add anaconda binaries path in PATH environment variable
+echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bashrc 
+
+# Refresh basically
+source .bashrc
+### You might face some problem after the step 14. so to do that
+sudo apt-get install python3-pip ### this will install python3 
+sudo pip3 install virtualenv virtualenvwrapper ## This will install the virtual virtualenvwrapper in the required folder
+###Now run the 
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+###
+source .bashrc
+
+###Install Opencv3
+conda install -c menpo opencv3
+
+
+# Update the package
+conda update conda
